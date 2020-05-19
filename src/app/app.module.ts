@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { HoraTrabalhadaComponent } from './hora-trabalhada/hora-trabalhada.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    HoraTrabalhadaComponent
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,11 @@ export class ProdutoComponent implements OnInit {
   }
 
   onSubmit(){
-    this.custo = this.horasTrabalhadas * 10;
+    let horaTrabalhada =  parseFloat(localStorage.getItem('horaTrabalhada'));
+    if (!horaTrabalhada){
+      horaTrabalhada = 10;
+    }
+    this.custo = this.horasTrabalhadas * horaTrabalhada;
     for (const i in this.itensSelecionados){
       if (this.itensSelecionados.hasOwnProperty(i)) {
         const item = this.itensSelecionados[i];
