@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "nome": "Item 1",
+    "custo": 3.5,
+    "tipoUnidade": "unidade"
+  }, {
+    "id": 2,
+    "nome": "Item 2",
+    "custo": 7,
+    "tipoUnidade": "metro"
+  }, {
+    "id": 3,
+    "nome": "Item 3",
+    "custo": 50,
+    "tipoUnidade": "unidade"
+  }, {
+    "id": 4,
+    "nome": "Item 4",
+    "custo": 6.5,
+    "tipoUnidade": "metro"
+  }, {
+    "id": 5,
+    "nome": "Item 5",
+    "custo": 2,
+    "tipoUnidade": "metro"
+  }, {
+    "id": 6,
+    "nome": "Item 6",
+    "custo": 1.5,
+    "tipoUnidade": "unidade"
+  }
+]
