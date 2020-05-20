@@ -34,19 +34,31 @@
         </tr>
         <tr *ngFor="let item of itensSelecionados;let index = index;trackBy:trackByIndex;">
           <td>{{item.nome}}</td>
-          <td>{{item.custo}}</td>
+          <td>{{item.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
           <td><input type="number" name=item{{index}} [(ngModel)]="itensSelecionados[index].quantidade" /></td>
+          <td><input type="button" value="Remover" (click)="removeItem(item)" /></td>
         </tr>
       </table>
     </div>
 
-    <label for="itensCombo">Itens</label>
+    <label>Itens</label>
        <div>
-           <select id="itensCombo" name="itensCombo" size="10" [(ngModel)]="itemSelecionado">
-             <option *ngFor="let item of itens | async" [ngValue]="item">{{item.nome}}</option>
-           </select>
+        <table>
+          <tr>
+            <th>Nome</th>
+            <th>Tipo Unidade</th>
+            <th>Custo</th>
+            <th>Editar</th>
+          </tr>
+          <tr *ngFor="let item of itens | async ">
+            <td>{{item.nome}}</td>
+            <td>{{item.tipoUnidade}}</td>
+            <td>{{item.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
+            <td><input type="button" value="Seleciona" (click)="selecionaItem(item)" /></td>
+          </tr>
+        </table>
        </div>
-       <input type="button" value="Seleciona Item" (click)="selecionaItem(itemSelecionado)" />
+
     <div>
       <input type="button" value="Cria Produto" type="submit">
       <input type="button" value="Limpar Produto" type="reset">

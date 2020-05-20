@@ -54,11 +54,19 @@ export class ProdutoComponent implements OnInit {
 
   selecionaItem(item){
     console.log(item);
-    if(!this.itensSelecionados){
+    if (!this.itensSelecionados){
       this.itensSelecionados = []
     }
-    if(this.itensSelecionados.indexOf(item) === -1){
+    if (this.itensSelecionados.indexOf(item) === -1){
       this.itensSelecionados.push(item);
+    }
+    console.log(this.itensSelecionados);
+  }
+
+  removeItem(item){
+    const idx = this.itensSelecionados.indexOf(item);
+    if (idx !== -1){
+      this.itensSelecionados.splice(idx, 1);
     }
     console.log(this.itensSelecionados);
   }

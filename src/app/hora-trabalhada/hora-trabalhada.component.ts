@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hora-trabalhada.component.css']
 })
 export class HoraTrabalhadaComponent implements OnInit {
-  public horaTrabalhada;
+  public horaTrabalhada = parseFloat(localStorage.getItem('horaTrabalhada'));
 
   constructor() { }
 
