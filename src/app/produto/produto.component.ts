@@ -1,3 +1,4 @@
+import { ItemService } from './../item.service';
 import { Item } from './../item';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgControl } from '@angular/forms';
@@ -7,7 +8,7 @@ import { FormBuilder, NgControl } from '@angular/forms';
   styleUrls: ['./produto.component.css']
 })
 export class ProdutoComponent implements OnInit {
-  itens: Item[];
+  itens;
   itemSelecionado: Item;
   id: number;
   nome: string;
@@ -15,16 +16,14 @@ export class ProdutoComponent implements OnInit {
   custo: number;
   itensSelecionados: Item[];
 
-  constructor(  ) {
+  constructor(
+    private itemService: ItemService,
+  ) {
 
    }
 
   ngOnInit(): void {
-    this.itens = [
-      new Item(1, 'Item 1', 10, 0),
-      new Item(2, 'Item 2', 5, 0),
-      new Item(3, 'Item 3', 7, 0),
-    ];
+    this.itens = this.itemService.getListaItens();
   }
 
   onSubmit(){

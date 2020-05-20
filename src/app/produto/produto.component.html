@@ -43,7 +43,7 @@
     <label for="itensCombo">Itens</label>
        <div>
            <select id="itensCombo" name="itensCombo" size="10" [(ngModel)]="itemSelecionado">
-             <option *ngFor="let item of itens" [ngValue]="item">{{item.nome}}</option>
+             <option *ngFor="let item of itens | async" [ngValue]="item">{{item.nome}}</option>
            </select>
        </div>
        <input type="button" value="Seleciona Item" (click)="selecionaItem(itemSelecionado)" />
