@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="produto" >
   <form (ngSubmit)="onSubmit()" >
     <label>Cadastro de produtos</label><br>
     <label for="idProduto">Id Produto</label>
@@ -6,7 +6,7 @@
     <label for="nomeProduto">Nome</label>
     <div><input type="text" name="nome" [(ngModel)]="produto.nome" id="nomeProduto"></div>
     <label for="horasTrabalhadasProduto">Horas trabalhadas</label>
-    <div><input type="text" name="horasTrabalhadas" [(ngModel)]="produto.horasTrabalhadas" id="horasTrabalhadasProduto"></div>
+    <div><input type="text" name="horasTrabalhadas" [(ngModel)]="produto.horasTrabalhadas" id="horasTrabalhadasProduto" (keyup)="calculaCusto()"></div>
     <label>Custo</label>
     <div>{{produto.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</div>
     <div>
@@ -20,7 +20,7 @@
         <tr *ngFor="let item of produto.itensSelecionados">
           <td>{{item.nome}}</td>
           <td>{{item.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
-          <td><input type="number" name=item{{item.id}} [(ngModel)]="item.quantidade" /></td>
+          <td><input type="number" name=item{{item.id}} [(ngModel)]="item.quantidade" (change)="calculaCusto()"/></td>
           <td><input type="button" value="Remover" (click)="removeItem(item)" /></td>
         </tr>
       </table>

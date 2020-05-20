@@ -40,19 +40,24 @@ export class ProdutoCadastroComponent implements OnInit {
   }
 
   onSubmit(){
+    console.log(this.produto);
+  }
+
+  calculaCusto(){
     let horaTrabalhada =  parseFloat(localStorage.getItem('horaTrabalhada'));
     if (!horaTrabalhada){
       horaTrabalhada = 10;
     }
+
     this.produto.custo = this.produto.horasTrabalhadas * horaTrabalhada;
     for (const i in this.produto.itensSelecionados){
       if (this.produto.itensSelecionados.hasOwnProperty(i)) {
         const item = this.produto.itensSelecionados[i];
-        this.produto.custo = this.produto.custo + item.custo * item.quantidade;
+        if (item.quantidade > 0){
+          this.produto.custo = this.produto.custo + item.custo * item.quantidade;
+        }
       }
     }
-
-    console.log(this.produto);
   }
 
   selecionaItem(item){
