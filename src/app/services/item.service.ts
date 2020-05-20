@@ -16,24 +16,10 @@ export class ItemService {
     return this.http.get(environment.baseUrl + '/item/listar');
   }
 
-  async getItem(id) {
-    const itens = await this.getListaItens().toPromise();
-    console.log(itens);
-
-    let item;
-
-    for (const i in itens) {
-      if (itens.hasOwnProperty(i)) {
-        const element = itens[i];
-        if (element.id === id){
-          item = element;
-          break;
-        }
-      }
-    }
-    console.log(item);
-
-    return item;
+  getItem(id) {
+    const url = environment.baseUrl + '/item/getById?id=' + id;
+    console.log(url);
+    return this.http.get(url).toPromise();
   }
 
   getTiposUnidade(){
