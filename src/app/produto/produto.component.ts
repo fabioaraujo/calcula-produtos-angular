@@ -66,6 +66,7 @@ export class ProdutoComponent implements OnInit {
   removeItem(item){
     const idx = this.itensSelecionados.indexOf(item);
     if (idx !== -1){
+      item.quantidade = '';
       this.itensSelecionados.splice(idx, 1);
     }
     console.log(this.itensSelecionados);

@@ -23,7 +23,7 @@
     <label for="horasTrabalhadasProduto">Horas trabalhadas</label>
     <div><input type="text" name="horasTrabalhadas" [(ngModel)]="horasTrabalhadas" id="horasTrabalhadasProduto"></div>
     <label>Custo</label>
-    <div>{{custo}}</div>
+    <div>{{custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</div>
     <div>
       Itens selecionados
       <table>
@@ -32,14 +32,19 @@
           <th>Custo</th>
           <th>Quantidade</th>
         </tr>
-        <tr *ngFor="let item of itensSelecionados;let index = index;trackBy:trackByIndex;">
+        <tr *ngFor="let item of itensSelecionados">
           <td>{{item.nome}}</td>
           <td>{{item.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
-          <td><input type="number" name=item{{index}} [(ngModel)]="itensSelecionados[index].quantidade" /></td>
+          <td><input type="number" name=item{{item.id}} [(ngModel)]="item.quantidade" /></td>
           <td><input type="button" value="Remover" (click)="removeItem(item)" /></td>
         </tr>
       </table>
     </div>
+    <div>
+      <input type="button" value="Cria Produto" type="submit">
+      <input type="button" value="Limpar Produto" type="reset">
+    </div>
+  </form>
 
     <label>Itens</label>
        <div>
@@ -58,11 +63,5 @@
           </tr>
         </table>
        </div>
-
-    <div>
-      <input type="button" value="Cria Produto" type="submit">
-      <input type="button" value="Limpar Produto" type="reset">
-    </div>
-  </form>
   </div>
 </div>
