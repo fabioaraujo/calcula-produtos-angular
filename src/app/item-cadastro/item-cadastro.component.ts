@@ -37,4 +37,8 @@ export class ItemCadastroComponent implements OnInit {
     this.tiposUnidade = this.itemService.getTiposUnidade();
   }
 
+  onSubmit(){
+    this.itemService.postCreate(this.item);
+  }
+
 }
