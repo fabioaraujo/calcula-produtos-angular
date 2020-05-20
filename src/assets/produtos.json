@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "nome": "Produto 1",
+    "horasTrabalhadas": 2,
+    "itensSelecionados": [],
+    "custo": 20
+  }, {
+    "id": 2,
+    "nome": "Produto 2",
+    "horasTrabalhadas": 4,
+    "itensSelecionados": [],
+    "custo": 50
+  }, {
+    "id": 3,
+    "nome": "Produto 3",
+    "horasTrabalhadas": 6,
+    "itensSelecionados": [],
+    "custo": 10
+  }, {
+    "id": 4,
+    "nome": "Produto 4",
+    "horasTrabalhadas": 7,
+    "itensSelecionados": [],
+    "custo": 45
+  }, {
+    "id": 5,
+    "nome": "Produto 5",
+    "horasTrabalhadas": 20,
+    "itensSelecionados": [],
+    "custo": 200
+  }, {
+    "id": 6,
+    "nome": "Produto 6",
+    "horasTrabalhadas": 1,
+    "itensSelecionados": [],
+    "custo": 5
+  }
+]

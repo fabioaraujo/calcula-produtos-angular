@@ -1,3 +1,4 @@
+import { ProdutoService } from './../produto.service';
 import { ItemService } from './../item.service';
 import { Item } from './../item';
 import { Component, OnInit } from '@angular/core';
@@ -9,6 +10,8 @@ import { FormBuilder, NgControl } from '@angular/forms';
 })
 export class ProdutoComponent implements OnInit {
   itens;
+  produtos;
+
   itemSelecionado: Item;
   id: number;
   nome: string;
@@ -18,12 +21,14 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private itemService: ItemService,
+    private produtoService: ProdutoService
   ) {
 
    }
 
   ngOnInit(): void {
     this.itens = this.itemService.getListaItens();
+    this.produtos = this.produtoService.getListaProdutos();
   }
 
   onSubmit(){
@@ -51,7 +56,7 @@ export class ProdutoComponent implements OnInit {
   selecionaItem(item){
     console.log(item);
     if (!this.itensSelecionados){
-      this.itensSelecionados = []
+      this.itensSelecionados = [];
     }
     if (this.itensSelecionados.indexOf(item) === -1){
       this.itensSelecionados.push(item);

@@ -25,7 +25,7 @@ export class ItemCadastroComponent implements OnInit {
     this.route.paramMap.subscribe( params => {
       this.itemService.getItem(+params.get('id'))
             .then(item => {
-                if(item){
+                if (item){
                   this.item = item;
                 }else{
                   this.item = this.itemPadrao;

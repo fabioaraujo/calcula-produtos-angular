@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { ItemCadastroComponent } from './item-cadastro/item-cadastro.component';
+import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
@@ -18,7 +19,8 @@ registerLocaleData(localePt, 'pt');
     ProdutoComponent,
     HoraTrabalhadaComponent,
     ListarItensComponent,
-    ItemCadastroComponent
+    ItemCadastroComponent,
+    ProdutoCadastroComponent
   ],
   imports: [
     BrowserModule,
