@@ -13,12 +13,12 @@
       "id": 4,
       "nome": "Item 4",
       "custo": 6.5,
-      "tipoUnidade": "metro"
+      "tipoUnidade": "METRO"
     }, {
       "id": 5,
       "nome": "Item 5",
       "custo": 2,
-      "tipoUnidade": "metro"
+      "tipoUnidade": "METRO"
     }],
     "custo": 50
   }, {
@@ -35,7 +35,7 @@
       "id": 3,
       "nome": "Item 3",
       "custo": 50,
-      "tipoUnidade": "unidade"
+      "tipoUnidade": "UNIDADE"
     }],
     "custo": 45
   }, {

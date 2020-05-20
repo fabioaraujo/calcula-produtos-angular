@@ -33,4 +33,8 @@ export class ItemService {
 
     return item;
   }
+
+  getTiposUnidade(){
+    return this.http.get('../assets/tipo-unidade.json');
+  }
 }

@@ -15,7 +15,11 @@ Item cadastro
     </div>
     <div>
       <label for="tipoUnidade">Tipo Unidade</label>
-      <input name="tipoUnidade" [(ngModel)]="item.tipoUnidade" />
+      <select name="tipoUnidade" [(ngModel)]="item.tipoUnidade">
+        <option *ngFor="let tipo of tiposUnidade" [ngValue]="tipo">
+          {{tipo}}
+        </option>
+      </select>
     </div>
     <div>
       <button type="submit">Cadastra Item</button>
