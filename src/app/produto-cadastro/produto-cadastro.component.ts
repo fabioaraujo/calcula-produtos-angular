@@ -1,7 +1,7 @@
-import { ProdutoService } from './../produto.service';
+import { ProdutoService } from '../services/produto.service';
 import { ActivatedRoute } from '@angular/router';
-import { ItemService } from './../item.service';
-import { Item } from './../item';
+import { ItemService } from '../services/item.service';
+import { Item } from '../classes/item';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

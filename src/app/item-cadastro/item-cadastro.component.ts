@@ -1,4 +1,4 @@
-import { ItemService } from './../item.service';
+import { ItemService } from '../services/item.service';
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';

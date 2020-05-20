@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ItemService } from '../item.service';
+import { ItemService } from '../services/item.service';
 
 @Component({
   templateUrl: './listar-itens.component.html',

@@ -1,6 +1,6 @@
-import { ProdutoService } from './../produto.service';
-import { ItemService } from './../item.service';
-import { Item } from './../item';
+import { ProdutoService } from '../services/produto.service';
+import { ItemService } from '../services/item.service';
+import { Item } from '../classes/item';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgControl } from '@angular/forms';
 
