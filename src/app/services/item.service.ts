@@ -13,11 +13,11 @@ export class ItemService {
   ) { }
 
   getListaItens(){
-    return this.http.get(environment.baseUrl + '/item/listar');
+    return this.http.get(environment.baseUrl + '/itens');
   }
 
   getItem(id) {
-    const url = environment.baseUrl + '/item/getById?id=' + id;
+    const url = environment.baseUrl + '/itens/' + id;
     console.log(url);
     return this.http.get(url).toPromise();
   }
@@ -28,7 +28,7 @@ export class ItemService {
 
   postCreate(item){
     try{
-      const url = environment.baseUrl + '/item/criar';
+      const url = environment.baseUrl + '/itens';
       console.log(url);
       const response = this.http.post(url, item);
       response.toPromise().then(r => console.log(r));
