@@ -15,11 +15,7 @@ export class ItemCadastroComponent implements OnInit {
             tipoUnidade: ''
           };
   item;
-  tiposUnidade = [
-    "METRO",
-    "UNIDADE"
-  ]
-  ;
+  tiposUnidade;
 
   constructor(
     private itemService: ItemService,
@@ -38,7 +34,7 @@ export class ItemCadastroComponent implements OnInit {
             });
     });
 
-   // this.tiposUnidade = this.itemService.getTiposUnidade();
+    this.tiposUnidade = this.itemService.getTiposUnidade();
   }
 
 }

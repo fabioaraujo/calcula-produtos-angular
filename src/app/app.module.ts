@@ -11,6 +11,7 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { ItemCadastroComponent } from './item-cadastro/item-cadastro.component';
 import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
+import { MenuComponent } from './menu/menu.component';
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
@@ -20,7 +21,8 @@ registerLocaleData(localePt, 'pt');
     HoraTrabalhadaComponent,
     ListarItensComponent,
     ItemCadastroComponent,
-    ProdutoCadastroComponent
+    ProdutoCadastroComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

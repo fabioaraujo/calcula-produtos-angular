@@ -16,7 +16,8 @@ Item cadastro
     <div>
       <label for="tipoUnidade">Tipo Unidade</label>
       <select name="tipoUnidade" [(ngModel)]="item.tipoUnidade">
-        <option *ngFor="let tipo of tiposUnidade" [ngValue]="tipo">
+        <option disabled>Selecione o tipo de unidade</option>
+        <option *ngFor="let tipo of tiposUnidade | async" [ngValue]="tipo">
           {{tipo}}
         </option>
       </select>
