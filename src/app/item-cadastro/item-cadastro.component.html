@@ -2,6 +2,10 @@ Item cadastro
 <div *ngIf="item" >
   <form>
     <div>
+      <label for="id">Id</label>
+      <input name="id" [(ngModel)]="item.id" readonly />
+    </div>
+    <div>
       <label for="nome">Nome</label>
       <input name="nome" [(ngModel)]="item.nome" />
     </div>
