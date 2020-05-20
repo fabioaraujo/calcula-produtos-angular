@@ -13,7 +13,7 @@ export class ItemService {
   ) { }
 
   getListaItens(){
-    return this.http.get('../assets/itens.json');
+    return this.http.get(environment.baseUrl + '/item/listar');
   }
 
   async getItem(id) {
