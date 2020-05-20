@@ -48,10 +48,6 @@ export class ProdutoComponent implements OnInit {
     console.log(produto);
   }
 
-  trackByIndex(index: number, obj: any): any {
-    return index;
-  }
-
   selecionaItem(item){
     console.log(item);
     if (!this.itensSelecionados){

@@ -10,6 +10,6 @@
     <td>{{item.nome}}</td>
     <td>{{item.tipoUnidade}}</td>
     <td>{{item.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
-    <td><button>Editar</button></td>
+    <td><button [routerLink]="['/itens', item.id]">Editar</button></td>
   </tr>
 </table>
