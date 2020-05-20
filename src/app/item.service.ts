@@ -32,7 +32,5 @@ export class ItemService {
     console.log(item);
 
     return item;
-
-
   }
 }

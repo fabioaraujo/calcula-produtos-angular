@@ -16,59 +16,9 @@
         <td>{{p.nome}}</td>
         <td>{{p.horasTrabalhadas}}</td>
         <td>{{p.custo}}</td>
+        <td><button [routerLink]="['/produtos', p.id]">Editar</button></td>
       </tr>
     </tbody>
   </table>
   <br><br>
-  <div>
-  <form (ngSubmit)="onSubmit()" >
-    <label>Cadastro de produtos</label><br>
-    <label for="idProduto">Id Produto</label>
-    <div><input type="text" name="id" [(ngModel)]="id" id="idProduto"></div>
-    <label for="nomeProduto">Nome</label>
-    <div><input type="text" name="nome" [(ngModel)]="nome" id="nomeProduto"></div>
-    <label for="horasTrabalhadasProduto">Horas trabalhadas</label>
-    <div><input type="text" name="horasTrabalhadas" [(ngModel)]="horasTrabalhadas" id="horasTrabalhadasProduto"></div>
-    <label>Custo</label>
-    <div>{{custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</div>
-    <div>
-      Itens selecionados
-      <table>
-        <tr>
-          <th>Item</th>
-          <th>Custo</th>
-          <th>Quantidade</th>
-        </tr>
-        <tr *ngFor="let item of itensSelecionados">
-          <td>{{item.nome}}</td>
-          <td>{{item.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
-          <td><input type="number" name=item{{item.id}} [(ngModel)]="item.quantidade" /></td>
-          <td><input type="button" value="Remover" (click)="removeItem(item)" /></td>
-        </tr>
-      </table>
-    </div>
-    <div>
-      <input type="button" value="Cria Produto" type="submit">
-      <input type="button" value="Limpar Produto" type="reset">
-    </div>
-  </form>
-
-    <label>Itens</label>
-       <div>
-        <table>
-          <tr>
-            <th>Nome</th>
-            <th>Tipo Unidade</th>
-            <th>Custo</th>
-            <th>Editar</th>
-          </tr>
-          <tr *ngFor="let item of itens | async ">
-            <td>{{item.nome}}</td>
-            <td>{{item.tipoUnidade}}</td>
-            <td>{{item.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
-            <td><input type="button" value="Seleciona" (click)="selecionaItem(item)" /></td>
-          </tr>
-        </table>
-       </div>
-  </div>
 </div>
