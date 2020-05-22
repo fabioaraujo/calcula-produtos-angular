@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="produto">
   <form (ngSubmit)="onSubmit()" >
     <label>Cadastro de produtos</label><br>
     <div *ngIf="produto.id">

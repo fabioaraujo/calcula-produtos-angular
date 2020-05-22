@@ -1,3 +1,4 @@
+import { HoraTrabalhadaService } from './../services/hora-trabalhada.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,16 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hora-trabalhada.component.css']
 })
 export class HoraTrabalhadaComponent implements OnInit {
-  public horaTrabalhada = parseFloat(localStorage.getItem('horaTrabalhada'));
+  horaTrabalhada;
 
-  constructor() { }
+  constructor(
+    private horaTrabalhadaService: HoraTrabalhadaService
+  ) { }
 
   ngOnInit(): void {
+    this.horaTrabalhadaService.get().then(h => this.horaTrabalhada = h);
   }
 
   atualizarHoraTrabalhada(horaTrabalhada){
     console.log(horaTrabalhada);
-    localStorage.setItem('horaTrabalhada', horaTrabalhada);
+    this.horaTrabalhadaService.atualiza(horaTrabalhada);
   }
 
 }
