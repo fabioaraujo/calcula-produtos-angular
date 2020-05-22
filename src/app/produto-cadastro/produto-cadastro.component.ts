@@ -12,10 +12,9 @@ export class ProdutoCadastroComponent implements OnInit {
   itens;
   produto;
   produtoPadrao = {
-    id: '',
     nome: '',
     horasTrabalhadas: '',
-    itensSelecionados: [],
+    itens: [],
     custo: ''
   };
 
@@ -41,6 +40,7 @@ export class ProdutoCadastroComponent implements OnInit {
 
   onSubmit(){
     console.log(this.produto);
+    this.produtoService.create(this.produto);
   }
 
   calculaCusto(){
@@ -50,9 +50,9 @@ export class ProdutoCadastroComponent implements OnInit {
     }
 
     this.produto.custo = this.produto.horasTrabalhadas * horaTrabalhada;
-    for (const i in this.produto.itensSelecionados){
-      if (this.produto.itensSelecionados.hasOwnProperty(i)) {
-        const item = this.produto.itensSelecionados[i];
+    for (const i in this.produto.itens){
+      if (this.produto.itens.hasOwnProperty(i)) {
+        const item = this.produto.itens[i];
         if (item.quantidade > 0){
           this.produto.custo = this.produto.custo + item.custo * item.quantidade;
         }
@@ -62,29 +62,29 @@ export class ProdutoCadastroComponent implements OnInit {
 
   selecionaItem(item){
     console.log(item);
-    if (!this.produto.itensSelecionados){
-      this.produto.itensSelecionados = [];
+    if (!this.produto.itens){
+      this.produto.itens = [];
     }
-    for (const i in this.produto.itensSelecionados){
-      if (this.produto.itensSelecionados.hasOwnProperty(i)) {
-        const itemSelecionado = this.produto.itensSelecionados[i];
+    for (const i in this.produto.itens){
+      if (this.produto.itens.hasOwnProperty(i)) {
+        const itemSelecionado = this.produto.itens[i];
         if (item.id === itemSelecionado.id){
           return;
         }
       }
     }
-    this.produto.itensSelecionados.push(item);
+    this.produto.itens.push(item);
 
-    console.log(this.produto.itensSelecionados);
+    console.log(this.produto.itens);
   }
 
   removeItem(item){
-    const idx = this.produto.itensSelecionados.indexOf(item);
+    const idx = this.produto.itens.indexOf(item);
     if (idx !== -1){
       item.quantidade = '';
-      this.produto.itensSelecionados.splice(idx, 1);
+      this.produto.itens.splice(idx, 1);
     }
-    console.log(this.produto.itensSelecionados);
+    console.log(this.produto.itens);
   }
 
 }

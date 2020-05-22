@@ -1,8 +1,9 @@
-<div *ngIf="produto" >
+<div>
   <form (ngSubmit)="onSubmit()" >
     <label>Cadastro de produtos</label><br>
-    <label for="idProduto">Id Produto</label>
-    <div><input type="text" name="id" [(ngModel)]="produto.id" id="idProduto" readonly></div>
+    <div *ngIf="produto.id">
+      <input type="hidden" name="id" [(ngModel)]="produto.id" id="idProduto" readonly>
+    </div>
     <label for="nomeProduto">Nome</label>
     <div><input type="text" name="nome" [(ngModel)]="produto.nome" id="nomeProduto"></div>
     <label for="horasTrabalhadasProduto">Horas trabalhadas</label>
@@ -17,7 +18,7 @@
           <th>Custo</th>
           <th>Quantidade</th>
         </tr>
-        <tr *ngFor="let item of produto.itensSelecionados">
+        <tr *ngFor="let item of produto.itens">
           <td>{{item.nome}}</td>
           <td>{{item.custo | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
           <td><input type="number" name=item{{item.id}} [(ngModel)]="item.quantidade" (change)="calculaCusto()"/></td>

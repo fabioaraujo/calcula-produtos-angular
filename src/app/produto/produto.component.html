@@ -1,6 +1,6 @@
 <div>
   <h2>Produtos</h2>
-  <table id="produtos">
+  <table id="produtos" *ngIf="produtos | async" >
     <thead>
       <tr>
         <th>ID</th>
