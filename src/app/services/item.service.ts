@@ -30,7 +30,12 @@ export class ItemService {
     try{
       const url = environment.baseUrl + '/itens';
       console.log(url);
-      const response = this.http.post(url, item);
+      let response;
+      if(!item.id){
+        response = this.http.post(url, item);
+      }else {
+        response = this.http.put(url, item);
+      }
       response.toPromise().then(r => console.log(r));
     }catch(err){
       console.log(err);

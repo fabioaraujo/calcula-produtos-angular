@@ -1,7 +1,9 @@
 Item cadastro
 <div *ngIf="item" >
   <form (ngSubmit)="onSubmit()" >
+    <div *ngIf="item.id" >
       <input name="id" [(ngModel)]="item.id" type="hidden" />
+    </div>
     <div>
       <label for="nome">Nome</label>
       <input name="nome" [(ngModel)]="item.nome" />

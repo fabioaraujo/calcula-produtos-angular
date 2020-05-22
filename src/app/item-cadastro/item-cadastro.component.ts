@@ -9,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ItemCadastroComponent implements OnInit {
   itemPadrao = {
-            id: '',
             nome: '',
             custo: '',
             tipoUnidade: ''
@@ -23,6 +22,8 @@ export class ItemCadastroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.tiposUnidade = this.itemService.getTiposUnidade();
+
     this.route.paramMap.subscribe( params => {
       this.itemService.getItem(+params.get('id'))
             .then(item => {
@@ -33,8 +34,6 @@ export class ItemCadastroComponent implements OnInit {
                 }
             });
     });
-
-    this.tiposUnidade = this.itemService.getTiposUnidade();
   }
 
   onSubmit(){
